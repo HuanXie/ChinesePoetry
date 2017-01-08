@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">ChinesePoetry</string>
+    <string name="gu_yuan_cao_song_bie">古原草送别</string>
+    <string name="cao_first">离离原上_</string>
+    <string name="cao_second">一岁一枯_</string>
+    <string name="cao_third">野火烧不_</string>
+    <string name="cao_fourth">春风吹又_</string>
+    <string name="lastword_cao_first">草</string>
+    <string name="lastword_cao_second">荣</string>
+    <string name="lastword_cao_third">尽</string>
+    <string name="lastword_cao_fourth">生</string>
+</resources>
