@@ -4,10 +4,6 @@
     android:id="@+id/activity_base"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     tools:context="com.example.huaxie.chinesepoetry.BaseActivity">
 
@@ -23,31 +19,12 @@
             android:layout_height="wrap_content"
             android:text="@string/gu_yuan_cao_song_bie"
             android:textSize="50sp"/>
-        <TextView
-            android:id="@+id/first_sentence"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/cao_first"
-            android:textSize="30sp"/>
-        <TextView
-            android:id="@+id/seconde_sentence"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/cao_second"
-            android:textSize="30sp"/>
-        <TextView
-            android:id="@+id/third_sentence"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/cao_third"
-            android:textSize="30sp"/>
 
-        <TextView
-            android:id="@+id/fourth_sentence"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/cao_fourth"
-            android:textSize="30sp"/>
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/poetry_recylerview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </android.support.v7.widget.RecyclerView>
 
     </LinearLayout>
 
@@ -55,29 +32,13 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:gravity="center"
-        >
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/lastword_cao_first"
-            android:textSize="30sp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/lastword_cao_second"
-            android:textSize="30sp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/lastword_cao_third"
-            android:textSize="30sp"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/lastword_cao_fourth"
-            android:textSize="30sp"/>
+        android:gravity="center">
 
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/words_choose_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        </android.support.v7.widget.RecyclerView>
 
     </LinearLayout>
 </LinearLayout>

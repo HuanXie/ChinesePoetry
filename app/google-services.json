@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "441989753210",
+    "firebase_url": "https://chinesepoetry-e9f08.firebaseio.com",
+    "project_id": "chinesepoetry-e9f08",
+    "storage_bucket": "chinesepoetry-e9f08.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:441989753210:android:e3d3370b82d28019",
+        "android_client_info": {
+          "package_name": "com.example.huaxie.chinesepoetry"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "441989753210-fk9i78nn5gtggmmeefkrr3k3gju243j2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.huaxie.chinesepoetry",
+            "certificate_hash": "4700c11d21d53bc64a70811cf0f9799067474364"
+          }
+        },
+        {
+          "client_id": "441989753210-tqk2q51v5sbft4knf1mqrpvfg32bi3br.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjuQ6EwgTcZontctmB2QC8nlw9ELPt3x4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "441989753210-tqk2q51v5sbft4knf1mqrpvfg32bi3br.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
