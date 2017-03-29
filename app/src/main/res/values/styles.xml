@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Base.Theme.AppCompat.Light">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -11,8 +11,6 @@
     <style name="word_text_style" parent="TextAppearance.AppCompat">
         <item name="android:layout_height">25dp</item>
         <item name="android:layout_width">25dp</item>
-        <item name="textSize">18sp</item>
-        <item name="textColor">@color/text</item>
         <item name="android:gravity">center</item>
         <item name="android:textStyle">bold</item>
         <item name="android:padding">5dp</item>

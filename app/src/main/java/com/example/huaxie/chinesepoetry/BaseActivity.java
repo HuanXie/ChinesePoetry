@@ -18,6 +18,6 @@ public class BaseActivity extends AppCompatActivity {
 
         List<String> poetryTextList1 = Arrays.asList(new String[]{"离", "离", "原", "上", "草"});
         WordsAdapter wordsAdapter = new WordsAdapter(poetryTextList1);
-        RecyclerView recyclerView =
+//        RecyclerView recyclerView =
     }
 }
