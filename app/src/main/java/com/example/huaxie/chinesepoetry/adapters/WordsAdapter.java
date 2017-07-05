@@ -10,10 +10,6 @@ import com.example.huaxie.chinesepoetry.R;
 
 import java.util.List;
 
-/**
- * Created by huanxie on 2017-03-28.
- */
-
 public class WordsAdapter extends RecyclerView.Adapter<WordsAdapter.MyViewHolder> {
     private List<String> dataList;
 

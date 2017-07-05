@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.example.huaxie.chinesepoetry.adapters.WordsAdapter;
+import com.example.huaxie.chinesepoetry.fragments.BaseFragment;
 
 import java.util.Arrays;
 import java.util.List;
@@ -17,12 +18,21 @@ public class BaseActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
+        loadFragment();
+    }
 
-        List<String> poetryTextList1 = Arrays.asList(new String[]{"离", "离", "原", "上", "草","离", "离", "原", "上", "草"});
-        WordsAdapter wordsAdapter = new WordsAdapter(poetryTextList1);
-        RecyclerView recyclerView = (RecyclerView) this.findViewById(R.id.poetry_recylerview);
-        recyclerView.setAdapter(wordsAdapter);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this,5, GridLayoutManager.VERTICAL,false);
-        recyclerView.setLayoutManager(gridLayoutManager);
+
+    private void loadFragment() {
+        BaseFragment baseFragment = BaseFragment.newInstance();
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, baseFragment)
+                .addToBackStack(null)
+                .commit();
+    }
+
+    @Override
+    public void onBackPressed() {
+        finish();
     }
 }
