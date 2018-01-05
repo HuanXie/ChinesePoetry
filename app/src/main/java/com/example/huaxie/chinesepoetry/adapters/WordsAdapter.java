@@ -1,5 +1,9 @@
 package com.example.huaxie.chinesepoetry.adapters;
 
+import android.content.Context;
+import android.graphics.PorterDuff;
+import android.graphics.drawable.Drawable;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,9 +15,11 @@ import com.example.huaxie.chinesepoetry.R;
 import java.util.List;
 
 public class WordsAdapter extends RecyclerView.Adapter<WordsAdapter.MyViewHolder> {
+    private Context context;
     private List<String> dataList;
 
-    public WordsAdapter(List<String> dataList) {
+    public WordsAdapter(Context context,List<String> dataList) {
+        this.context = context;
         this.dataList = dataList;
     }
 
@@ -21,6 +27,7 @@ public class WordsAdapter extends RecyclerView.Adapter<WordsAdapter.MyViewHolder
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.word_view, parent, false);
+
         return new MyViewHolder(itemView);
     }
 
@@ -39,6 +46,9 @@ public class WordsAdapter extends RecyclerView.Adapter<WordsAdapter.MyViewHolder
         public MyViewHolder(View itemView) {
             super(itemView);
             word = (TextView) itemView.findViewById(R.id.word);
+            Drawable drawableTop = word.getBackground();
+            drawableTop.setColorFilter(ContextCompat.getColor(context, R.color.blue), PorterDuff.Mode.SRC_IN);
+            word.setBackground(drawableTop);
         }
     }
 }
