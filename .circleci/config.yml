@@ -1,45 +1,57 @@
-# Java Gradle CircleCI 2.0 configuration file
-#
-# Check https://circleci.com/docs/2.0/language-java/ for more details
-#
 version: 2
-jobs:
-  build:
+
+references:
+
+  workspace_root: &workspace_root
+      ~/code
+
+  container_config: &container_config
+    xcode:
+      version: "9.1"
+
     docker:
-      # specify the version you desire here
       - image: circleci/openjdk:8-jdk
 
-      # Specify service dependencies here if necessary
-      # CircleCI maintains a library of pre-built images
-      # documented at https://circleci.com/docs/2.0/circleci-images/
-      # - image: circleci/postgres:9.4
-
-    working_directory: ~/repo
+    working_directory: *workspace_root
 
     environment:
-      # Customize the JVM maximum heap limit
       JVM_OPTS: -Xmx3200m
-      TERM: dumb
 
+  attach_workspace: &attach_workspace
+    attach_workspace:
+      at: *workspace_root
+
+  general_cache_key: &general_cache_key
+      key: chinese-{{ checksum "build.gradle" }}-{{ checksum ".circleci/config.yml" }}-{{ checksum "gradle/wrapper/gradle-wrapper.properties" }}
+
+jobs:
+
+  build:
+    <<: *container_config
     steps:
       - checkout
 
-      # Download and cache dependencies
       - restore_cache:
-          keys:
-          - v1-dependencies-{{ checksum "build.gradle" }}
-          # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
-
-      - run: gradle dependencies
-
+          <<: *general_cache_key
+      - run: ./gradlew dependencies
       - save_cache:
+          <<: *general_cache_key
           paths:
             - ~/.gradle
-          key: v1-dependencies-{{ checksum "build.gradle" }}
+            - ~/.m2
 
-      # run tests!
-      - run: gradle test
+      - run: ./gradlew clean
+      - run: ./gradlew assemble
+      - run: ./gradlew createEngine
+      - run: ./gradlew cobertura
+      - run: ./gradlew findbugsMain
+      - run: ./gradlew checkstyleMain
 
-
-
+      - store_test_results:
+          path: build/test-results
+      - store_artifacts:
+          path: build/reports
+          destination: reports
+      - store_artifacts:
+          path: build/cobertura
+          destination: reports/cobertura
